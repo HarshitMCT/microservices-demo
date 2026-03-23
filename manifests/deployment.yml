@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: harshitmctmicroservicesdemo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: harshitmctmicroservicesdemo
+  template:
+    metadata:
+      labels:
+        app: harshitmctmicroservicesdemo 
+    spec:
+      containers:
+        - name: harshitmctmicroservicesdemo 
+          image: mycontainerregistryhg.azurecr.io/harshitmctmicroservicesdemo
+          ports:
+          - containerPort: 80
